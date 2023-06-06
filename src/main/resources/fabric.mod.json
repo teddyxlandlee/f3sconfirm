@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "f3sconfirm",
+  "version": "${version}",
+  "name": "F3+S Confirm",
+  "description": "A confirm command should be executed before dumping dynamic textures with F3+S, in case accidental hard-drive use.",
+  "authors": [
+    "teddyxlandlee"
+  ],
+  "contact": {},
+  "license": "Apache-2.0",
+  "icon": "assets/f3sconfirm/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "xland.mcmod.f3sconfirm.F3SConfirmClient"
+    ]
+  },
+  "mixins": [
+    "f3s-confirm.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14",
+    "minecraft": ">=1.19.4-",
+    "fabric-command-api-v2": "*"
+  },
+  "recommends": {
+    "fabric-resource-loader-v0": "*"
+  }
+}
