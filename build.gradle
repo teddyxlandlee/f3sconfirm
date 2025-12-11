@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.7-SNAPSHOT'
+    id 'fabric-loom' version '1.10.1'
     id 'maven-publish'
 }
 
@@ -20,6 +20,8 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation("net.fabricmc.fabric-api:fabric-command-api-v2:${project.command_api_version}")
+    // lifecycle events (ClientTickEvents) used for GLFW callback installation
+    modImplementation("net.fabricmc.fabric-api:fabric-lifecycle-events-v1:${project.lifecycle_events_version}")
     modRuntimeOnly("net.fabricmc.fabric-api:fabric-resource-loader-v0:${project.resource_loader_version}")
 }
 
@@ -32,7 +34,7 @@ processResources {
     }
 }
 
-def targetJavaVersion = 17
+def targetJavaVersion = 21
 tasks.withType(JavaCompile).configureEach {
     // ensure that the encoding is set to UTF-8, no matter what the system default is
     // this fixes some edge cases with special characters not displaying correctly

@@ -3,9 +3,7 @@
   "minVersion": "0.8",
   "package": "xland.mcmod.f3sconfirm.mixin",
   "compatibilityLevel": "JAVA_17",
-  "client": [
-    "KeyboardMixin"
-  ],
+  "client": [],
   "injectors": {
     "defaultRequire": 1
   }
